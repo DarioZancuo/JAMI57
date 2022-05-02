@@ -1,3 +1,3 @@
 # JAMI57
 
-Esercizi generation
+Esercizi Generation
