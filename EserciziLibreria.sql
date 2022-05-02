@@ -6,12 +6,12 @@ where AnnoPubblicazione = 2009
 /* 2 */
 select Titolo
 from Romanzo
-where AnnoPubblicazione > 1990
+where AnnoPubblicazione >= 1990
 
 /* 3 */
 select *
 from Romanzo
-where AnnoPubblicazione > 1900
+where AnnoPubblicazione > 1900 and AnnoPubblicazione <= 2000
 
 /* 4 */
 select autore.Nome, autore.Cognome, Romanzo.Titolo
@@ -28,12 +28,12 @@ order by Autore.Cognome
 select autore.nome, autore.cognome, romanzo.Titolo
 from romanzo, autore
 where romanzo.autore = autore.ID and autore.Nazionalità = "russo"
-order by autore.cognome
+order by autore.cognome 
 
 /* 7 */
 select romanzo.Titolo
 from romanzo, autore
-where romanzo.autore = autore.id and (autore.DataNascita > 1809 and autore.DataNascita < 2000)
+where romanzo.autore = autore.id and (autore.DataNascita > 1900 and autore.DataNascita <= 2000)
 order by autore.cognome
 
 /* 8 */
