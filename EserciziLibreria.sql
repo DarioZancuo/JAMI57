@@ -2,3 +2,8 @@
 select Autore
 from Romanzo
 where AnnoPubblicazione = 2009
+
+/* 2 */
+select Titolo
+from Romanzo
+where AnnoPubblicazione > 1990
