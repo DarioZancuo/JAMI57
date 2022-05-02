@@ -12,3 +12,8 @@ where AnnoPubblicazione > 1990
 select *
 from Romanzo
 where AnnoPubblicazione > 1900
+
+/* 4 */
+select autore.Nome, autore.Cognome, Romanzo.Titolo
+from Romanzo, Autore
+where Romanzo.Autore = Autore.ID
