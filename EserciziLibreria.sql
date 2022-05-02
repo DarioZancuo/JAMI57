@@ -85,3 +85,8 @@ where romanzo.AnnoPubblicazione < 1900 and romanzo.titolo like "%Sposi%"
 select * 
 from romanzo, autore
 where romanzo.autore = autore.id and autore.nome = "Alessandro" and autore.cognome = "Manzoni"
+
+/* 18 */
+select distinct *
+from romanzo, autore
+where romanzo.autore = autore.id and autore.cognome = "Don DeLillo"
