@@ -55,3 +55,8 @@ where romanzo.autore = autore.id and autore.LuogoNascita = "Roma"
 select *
 from romanzo
 where romanzo.titolo like "Tokyo%"
+
+/* 12 */
+select *
+from romanzo
+where romanzo.titolo like "%Sposi%"
