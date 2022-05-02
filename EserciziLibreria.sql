@@ -60,3 +60,8 @@ where romanzo.titolo like "Tokyo%"
 select *
 from romanzo
 where romanzo.titolo like "%Sposi%"
+
+/* 13 */
+select *
+from romanzo
+where romanzo.titolo like "%i_"
