@@ -17,3 +17,9 @@ where AnnoPubblicazione > 1900
 select autore.Nome, autore.Cognome, Romanzo.Titolo
 from Romanzo, Autore
 where Romanzo.Autore = Autore.ID
+
+/* 5 */
+select autore.Cognome, autore.nome, Romanzo.Titolo
+from Romanzo, Autore
+where Romanzo.Autore = Autore.ID
+order by Autore.Cognome
