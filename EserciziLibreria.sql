@@ -29,3 +29,9 @@ select autore.nome, autore.cognome, romanzo.Titolo
 from romanzo, autore
 where romanzo.autore = autore.ID and autore.Nazionalità = "russo"
 order by autore.cognome
+
+/* 7 */
+select romanzo.Titolo
+from romanzo, autore
+where romanzo.autore = autore.id and (autore.DataNascita > 1809 and autore.DataNascita < 2000)
+order by autore.cognome
