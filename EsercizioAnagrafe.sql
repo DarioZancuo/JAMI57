@@ -13,3 +13,7 @@ where pf.cittàNascita = pg.cittàNascita
 select distinct persona.nome, persona.cittàNascita
 from persona join genia on persona.nome = genia.genitore
 where persona.età >=50
+
+/* 4 */
+select distinct p.Genitore as Nonni
+from Genia p join Genia g on g.Genitore = p.Figlio
