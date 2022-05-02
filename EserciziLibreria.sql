@@ -50,3 +50,8 @@ where romanzo.autore = autore.id and (autore.DataMorte is null or autore.LuogoMo
 select romanzo.titolo, romanzo.AnnoPubblicazione
 from romanzo, autore
 where romanzo.autore = autore.id and autore.LuogoNascita = "Roma"
+
+/* 11 */
+select *
+from romanzo
+where romanzo.titolo like "Tokyo%"
