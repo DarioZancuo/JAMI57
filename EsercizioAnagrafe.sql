@@ -1,4 +1,3 @@
 /* 1 */
 select città.regione, persona.nome
-from città, persona
-where persona.età >= 18
+from città join persona on persona.età >= 18
