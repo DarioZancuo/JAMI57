@@ -90,3 +90,8 @@ where romanzo.autore = autore.id and autore.nome = "Alessandro" and autore.cogno
 select distinct *
 from romanzo, autore
 where romanzo.autore = autore.id and autore.cognome = "Don DeLillo"
+
+/* 19 */
+select *
+from romanzo, Personaggio, PersonaggioRomanzo
+where (personaggio.nome = "Benjamin" and personaggio.cognome = "Malaussène") and (personaggio.id = PersonaggioRomanzo.personaggio) and (romanzo.id = PersonaggioRomanzo.romanzo)
