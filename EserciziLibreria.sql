@@ -45,3 +45,8 @@ where romanzo.autore = autore.id and autore.DataMorte is null
 select *
 from romanzo, autore
 where romanzo.autore = autore.id and (autore.DataMorte is null or autore.LuogoMorte != "Torino")
+
+/* 10 */
+select romanzo.titolo, romanzo.AnnoPubblicazione
+from romanzo, autore
+where romanzo.autore = autore.id and autore.LuogoNascita = "Roma"
