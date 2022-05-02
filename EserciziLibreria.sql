@@ -80,3 +80,8 @@ where romanzo.titolo like "%Zeno%" and (romanzo.AnnoPubblicazione > 1900 and rom
 select*
 from romanzo
 where romanzo.AnnoPubblicazione < 1900 and romanzo.titolo like "%Sposi%" 
+
+/* 17 */
+select * 
+from romanzo, autore
+where romanzo.autore = autore.id and autore.nome = "Alessandro" and autore.cognome = "Manzoni"
