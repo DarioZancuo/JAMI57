@@ -75,3 +75,8 @@ where romanzo.titolo like "%blues"
 select *
 from romanzo
 where romanzo.titolo like "%Zeno%" and (romanzo.AnnoPubblicazione > 1900 and romanzo.AnnoPubblicazione <= 2000)
+
+/* 16 */
+select*
+from romanzo
+where romanzo.AnnoPubblicazione < 1900 and romanzo.titolo like "%Sposi%" 
