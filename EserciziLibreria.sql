@@ -40,3 +40,8 @@ order by autore.cognome
 select romanzo.titolo, romanzo.AnnoPubblicazione
 from romanzo, autore
 where romanzo.autore = autore.id and autore.DataMorte is null
+
+/* 9 */
+select *
+from romanzo, autore
+where romanzo.autore = autore.id and (autore.DataMorte is null or autore.LuogoMorte != "Torino")
