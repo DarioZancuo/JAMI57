@@ -35,3 +35,8 @@ select romanzo.Titolo
 from romanzo, autore
 where romanzo.autore = autore.id and (autore.DataNascita > 1809 and autore.DataNascita < 2000)
 order by autore.cognome
+
+/* 8 */
+select romanzo.titolo, romanzo.AnnoPubblicazione
+from romanzo, autore
+where romanzo.autore = autore.id and autore.DataMorte is null
