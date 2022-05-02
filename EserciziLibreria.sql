@@ -65,3 +65,8 @@ where romanzo.titolo like "%Sposi%"
 select *
 from romanzo
 where romanzo.titolo like "%i_"
+
+/* 14 */
+select *
+from romanzo
+where romanzo.titolo like "%blues"
