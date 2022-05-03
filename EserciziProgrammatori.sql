@@ -17,11 +17,12 @@ from autore join programmatore on autore.codice = programmatore.codice
     join programma on programma.id = autore.id
 where programmatore.categoria = 10 and programma.linguaggio != "Java"
 
-/* 4 (errato)*/
-select programmatore.nome, autore.codice, autore.codice, programma.anno
-from autore join programmatore on autore.codice = programmatore.codice
-    join programma on programma.id = autore.id
-where programmatore.codice = autore.codice and programma.linguaggio = "Python"
+/* 4 */
+select distinct a1.codice as a1, a2.codice as a2
+from autore a1 join programma on a1.id = programma.id
+    join autore a2 on a1.id = a2.id
+where a1.codice != a2.codice
+    and a1.codice > a2.codice
 
 /* 5 */
 select autore.codice, programmatore.nome
