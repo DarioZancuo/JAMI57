@@ -29,3 +29,9 @@ from autore join programmatore on autore.codice = programmatore.codice
     join programma on programma.id = autore.id
 where programma.linguaggio = "Java"
 group by programma.linguaggio
+
+/* 6 */
+select programmatore. nome, programmatore.codice, programma.anno, count(*) as numeroProgrammi
+from autore join programmatore on autore.codice = programmatore.codice
+    join programma on programma.id = autore.id
+    group by programmatore.codice, programma.anno
