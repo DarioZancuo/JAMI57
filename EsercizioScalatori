@@ -2,3 +2,10 @@
 select scalata.scalatore as Scalatore, nazione.continente as Continente
 from scalata join nazione on scalata.nazione = nazione.nome
 order by scalata.scalatore
+
+/* 2 */
+select scalatore.cf as Scalatore, nazione.continente as Continente
+from scalata join nazione on scalata.nazione = nazione.nome
+    join scalatore on scalatore.cf = scalata.scalatore
+where scalatore.annoNascita < 1980
+order by scalatore.cf, nazione.continente
