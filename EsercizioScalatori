@@ -29,3 +29,11 @@ from scalatore join scalata on scalatore.cf = scalata.scalatore
     left join nazione on nazione.nome = scalata.nazione
     join nazione n1 on n1.nome = scalatore.nazioneNascita
 where n1.continente != "America" 
+
+/* 7 */
+select scalata.nazione, scalata.anno, count(*) as NumeroScalate
+from scalatore join scalata on scalatore.cf = scalata.scalatore
+    join nazione on nazione.nome = scalata.nazione
+group by scalata.nazione, scalata.anno
+having count(*) > 1
+order by scalata.anno
