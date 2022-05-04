@@ -1,0 +1,4 @@
+/* 1 */
+select scalata.scalatore as Scalatore, nazione.continente as Continente
+from scalata join nazione on scalata.nazione = nazione.nome
+order by scalata.scalatore
