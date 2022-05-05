@@ -45,6 +45,7 @@ where scalatore.nazioneNascita != scalata.nazione
 group by scalata.nazione
 
 /* 9 */
+insert into scalata values ('105', "Italia", '2007')
 select scalatore, scalata.nazione
 from scalatore join scalata on scalatore.cf = scalata.scalatore
 where scalata.nazione = scalatore.nazioneNascita and 

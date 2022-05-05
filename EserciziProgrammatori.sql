@@ -42,3 +42,12 @@ select programma.linguaggio, count(*) as mediaProgrammatori
 from autore join programmatore on autore.codice = programmatore.codice
     join programma on programma.id = autore.id
     group by programma.linguaggio
+
+/* 5 */
+select programmatore.codice, programmatore.nome
+from programmatore 
+where programmatore.nome in 
+    (select programmatore.nome 
+        from programmatore join autore on autore.codice = programmatore.codice 
+            join programma on programma.id = autore.id 
+                where programma.linguaggio = "Java")
