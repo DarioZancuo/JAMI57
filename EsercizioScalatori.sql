@@ -39,7 +39,7 @@ having count(*) > 1
 order by scalata.anno
 
 /* 8 */
-select scalata.nazione, count(*)/count(scalata.anno) as Media
+select scalata.nazione, count(*) / count(distinct anno) as Media
 from Scalatore join Scalata on scalatore.cf = scalata.scalatore
 where scalatore.nazioneNascita != scalata.nazione
 group by scalata.nazione
