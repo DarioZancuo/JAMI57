@@ -4,7 +4,7 @@ from scalata join nazione on scalata.nazione = nazione.nome
 order by scalata.scalatore
 
 /* 2 */
-select scalatore.cf as Scalatore, nazione.continente as Continente
+select scalatore.cf, nazione.continente
 from scalata join nazione on scalata.nazione = nazione.nome
     join scalatore on scalatore.cf = scalata.scalatore
 where scalatore.annoNascita < 1980
@@ -43,3 +43,9 @@ select scalata.nazione, count(*) / count(distinct anno) as Media
 from Scalatore join Scalata on scalatore.cf = scalata.scalatore
 where scalatore.nazioneNascita != scalata.nazione
 group by scalata.nazione
+
+/* 9 */
+select scalatore, scalata.nazione
+from scalatore join scalata on scalatore.cf = scalata.scalatore
+where scalata.nazione = scalatore.nazioneNascita and 
+    exists (select scalatore from scalata where scalata.anno - scalatore.annoNascita < 18)
