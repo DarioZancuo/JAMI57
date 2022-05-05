@@ -45,8 +45,7 @@ where scalatore.nazioneNascita != scalata.nazione
 group by scalata.nazione
 
 /* 9 */
-insert into scalata values ('105', "Italia", '2007')
-select scalatore, scalata.nazione
+select scalatore, scalata.nazione, scalatore.annoNascita, scalatore.nazioneNascita
 from scalatore join scalata on scalatore.cf = scalata.scalatore
-where scalata.nazione = scalatore.nazioneNascita and 
-    exists (select scalatore from scalata where scalata.anno - scalatore.annoNascita < 18)
+where scalata.nazione = scalatore.nazioneNascita and scalatore
+    in (select scalatore from scalata where scalata.anno - scalatore.annoNascita < 18)
