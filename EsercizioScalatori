@@ -24,7 +24,7 @@ where scalatore.nazioneNascita = scalata.nazione
 group by nazione.nome
 
 /* 6 */
-select scalatore.cf, scalatore.NazioneNascita, n1.continente as ContinenteNascita, scalata.nazione
+select distinct scalatore.cf, scalatore.NazioneNascita, n1.continente as ContinenteNascita, scalata.nazione
 from scalatore join scalata on scalatore.cf = scalata.scalatore
     left join nazione on nazione.nome = scalata.nazione
     join nazione n1 on n1.nome = scalatore.nazioneNascita
@@ -37,3 +37,8 @@ from scalatore join scalata on scalatore.cf = scalata.scalatore
 group by scalata.nazione, scalata.anno
 having count(*) > 1
 order by scalata.anno
+
+/* 8 */
+select pr.linguaggio, count(a.codice)/count (distinct pr.id) as media
+ from Autore a right join Programma pr on a.id = pr.id
+ group by pr.linguaggio
